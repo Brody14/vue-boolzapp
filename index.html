@@ -18,78 +18,159 @@
 		></script>
 		<link rel="stylesheet" href="./css/style.css" />
 	</head>
-	<body class="vh-100">
-		<div id="app">
-			<div class="boolzap p-4">
-				<div class="container bg-white">
-					<div class="row">
-						<div class="col-4">
-							<div class="row user-toolbar align-items-center">
-								<div class="col d-flex align-items-center p-0">
-									<img
-										class="user__img rounded-circle"
-										src="./img/user.jpg"
-										alt=""
-									/>
-									<span>Brody</span>
-								</div>
-								<div class="col-auto p-0">
-									<ul class="d-flex user-toolbar__icons m-0">
-										<li>
-											<a href="#">
-												<i class="fa-solid fa-circle-notch"></i>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="fa-solid fa-message"></i>
-											</a>
-										</li>
-										<li>
-											<a href="#">
-												<i class="fa-solid fa-ellipsis-vertical"></i>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
 
-							<div class="row notifications align-items-center">
-								<div class="col-auto bell">
-									<i
-										class="rounded-circle bg-white p-2 fa-solid fa-bell-slash"
-									></i>
-								</div>
-								<div class="col notifications__text p-0">
-									<p class="m-0">Ricevi notifiche di nuovi messaggi</p>
-									<a class="m-0 text-decoration-underline text-secondary" href="#">
-                                        Attiva notifiche desktop
+	<body class="vh-100 d-flex overflow-hidden">
+
+		<div id="app" class="boolzap my-4 container bg-white">
+ 
+            <div class="row h-100">
+                <div class="col-4 d-flex flex-column  h-100">
+            
+                    <!-- USER -->
+
+                    <div class="row user-toolbar align-items-center">
+                        <div class="col d-flex align-items-center p-0">
+                            <img
+                                class="user__img rounded-circle"
+                                src="./img/user.jpg"
+                                alt=""
+                            />
+                            <span>Brody</span>
+                        </div>
+                        <div class="col-auto p-0">
+                            <ul class="d-flex user-toolbar__icons m-0">
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-circle-notch"></i>
                                     </a>
-								</div>
-							</div>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-message"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-							<div class="row search-bar py-2 px-1">
-                                <div class="input-group p-0 border">
-                                    <span class="input-group-text search-bar__icon border-0" id="inputGroup-sizing-default">
-                                        <i class="mx-auto fa-solid fa-magnifying-glass"></i>
-                                    </span>
-                                    <input type="text" class="form-control border-0" aria-describedby="inputGroup-sizing-default">
-                                </div>
-                                
-							</div>
+                    <!-- NOTIFICATION -->
+
+                    <div class="row notifications align-items-center">
+                        <div class="col-auto bell">
+                            <i
+                                class="rounded-circle bg-white p-2 fa-solid fa-bell-slash"
+                            ></i>
+                        </div>
+                        <div class="col notifications__text p-0">
+                            <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+                            <a class="m-0 text-decoration-underline text-secondary" href="#">
+                                Attiva notifiche desktop
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- SEARCH BAR -->
 
 
-							<div class="chat-wrapper">wrap</div>
-						</div>
+                    <div class="row search-bar py-2 px-1">
+                        <div class="input-group p-0 border">
+                            <span class="input-group-text search-bar__icon border-0" id="inputGroup-sizing-default">
+                                <i class="mx-auto fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input type="text" class="form-control border-0" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        
+                    </div>
 
-						<div class="col-8 chat border">
-							<div class="chat__header">active chat</div>
-							<div class="chat__view">chat</div>
-							<div class="chat__toolbar">toolbar</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                    <!-- CHAT WRAPPER -->
+
+                    <div class="row chat-wrapper flex-grow-1 overflow-y-scroll">
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-8 chat border  h-100">
+                    <div class="chat__header">active chat</div>
+                    <div class="chat__view">chat</div>
+                    <div class="chat__toolbar">toolbar</div>
+                </div>
+            </div>
+        
+		
 		</div>
 
 		<script src="./js/script.js"></script>

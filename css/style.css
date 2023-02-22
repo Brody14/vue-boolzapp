@@ -31,9 +31,7 @@ img {
 body {
     background-image: url(../img/background.png);
     background-size: cover;
-    overflow: hidden;
 }
-
 
 /* USER TOOLBAR */
 
@@ -45,6 +43,7 @@ body {
 
 .user-toolbar{
     padding: 10px 6px;
+    height: 60px;
 }
 
 .user-toolbar__icons,
@@ -56,7 +55,8 @@ body {
     padding: 0 5px;
 }
 
-.user__img {
+.user__img,
+.chat-card__img {
     width: 20%;
     aspect-ratio: 1/1;
     object-position: center;
@@ -67,6 +67,7 @@ body {
 
 .notifications {
     background-color: var(--notifications-bg);
+    height: 70px;
 }
 
 .bell {
@@ -83,6 +84,7 @@ body {
 /* SEARCH BAR */
 .search-bar {
     background-color: var(--search-bg);
+    height: 50px;
 }
 
 .search-bar__icon {
