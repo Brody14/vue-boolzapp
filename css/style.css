@@ -42,19 +42,21 @@ body {
 }
 
 .user-toolbar,
-.chat__header{
+.chat__header,
+.chat__toolbar{
     padding: 10px 6px;
     height: 60px;
 }
 
 .user-toolbar__icons,
 .search-bar__icon,
-.chat__header__toolbar__icons {
+.chat__header__toolbar__icons{
     color: var(--icon-color);
 }
 
 .user-toolbar__icons > *,
-.chat__header__toolbar__icons > * {
+.chat__header__toolbar__icons > *,
+.chat__toolbar__icons > * {
     padding: 0 5px;
 }
 
@@ -94,11 +96,6 @@ body {
     width: 20%;
 }
 
-/* CHAT WRAPPER */
-
-.chat__view {
-    background-image: url(../img/backgroundChat.jpg);
-}
 
 /* CHAT HEADER */
 
@@ -109,4 +106,14 @@ body {
 
 .chat__header__text {
     font-size: 12px;
+}
+
+.chat__toolbar__icon {
+    color: #6B7275;
+}
+
+/* CHAT VIEW */
+
+.chat__view {
+    background-image: url(../img/backgroundChat.jpg);
 }
