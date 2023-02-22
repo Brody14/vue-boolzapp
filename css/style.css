@@ -1,0 +1,55 @@
+:root {
+    --user-bg: #EAEAEA;
+    --notifications-bg: #8EDAFC;
+    --sent-msg-bg: #D5F9BA;
+    --active-chat: #E9EBEB;
+    --search-bg: #FAFAFA;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+body {
+    background-image: url(../img/background.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    padding: 0 !important;
+}
+
+.main-aside {
+    flex-basis: 30%
+}
+
+.user-toolbar,
+.chat__header,
+.chat__toolbar {
+    background-color: var(--user-bg);
+}
+
+.notifications {
+    background-color: var(--notifications-bg);
+}
+
+.chat__view {
+    background-image: url(../img/backgroundChat.jpg);
+}
+
+.search-bar {
+    background-color: var(--search-bg);
+}
