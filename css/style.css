@@ -47,7 +47,8 @@ body {
     padding: 10px 6px;
 }
 
-.user-toolbar__icons {
+.user-toolbar__icons,
+.search-bar__icon {
     color: var(--icon-color);
 }
 
@@ -57,7 +58,7 @@ body {
 
 .user__img {
     width: 20%;
-    object-fit: 1/1;
+    aspect-ratio: 1/1;
     object-position: center;
     margin-right: 5px;
 }
@@ -78,13 +79,18 @@ body {
     font-size: 12px;
 }
 
+
+/* SEARCH BAR */
+.search-bar {
+    background-color: var(--search-bg);
+}
+
+.search-bar__icon {
+    width: 20%;
+}
+
 /* CHAT WRAPPER */
 
 .chat__view {
     background-image: url(../img/backgroundChat.jpg);
 }
-
-.search-bar {
-    background-color: var(--search-bg);
-}
-
