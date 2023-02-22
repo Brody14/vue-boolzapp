@@ -89,7 +89,17 @@
 
                     <!-- CHAT WRAPPER -->
 
-                    <div class="row chat-wrapper flex-grow-1 overflow-y-scroll">
+                    <div class="row chat-wrapper flex-grow-1 overflow-y-auto">
+                        <div class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                            <div>
+                                <p class="m-0">nome</p>
+                                <p class="m-0 text-secondary">
+                                    messaggio
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="chat-card d-flex p-2">
                             <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
                             <div>
@@ -198,10 +208,29 @@
                     </div>
 
 
-                    <div class="row chat__view flex-grow-1">
+                    <div class="row chat__view flex-grow-1 overflow-y-scroll py-3 px-5 align-items-start">
+                    
                         <div class="chat">
+                            <div class="chat__view-card chat__view-card-sent  mb-2 ms-auto p-2">
+                                <p class="chat__view-card__text m-0 text-start">Cose a caso</p>
+                                <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
+                            </div>
 
+                            <div class="chat__view-card chat__view-card-sent  mb-2 ms-auto p-2">
+                                <p class="chat__view-card__text m-0 text-start">Cose a caso</p>
+                                <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
+                            </div>
+
+                            <div class="chat__view-card chat__view-card-received bg-white  mb-2 me-auto p-2">
+                                <p class="chat__view-card__text m-0 text-start">Cose a caso</p>
+                                <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
+                            </div>
                         </div>
+
+                        
+
+
+                        
 
                     </div>
 

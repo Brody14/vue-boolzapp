@@ -61,8 +61,8 @@ body {
 }
 
 .user__img,
-.chat-card__img {
-    width: 20%;
+.chat__header__img {
+    width: 40px;
     aspect-ratio: 1/1;
     object-position: center;
     margin-right: 5px;
@@ -99,11 +99,6 @@ body {
 
 /* CHAT HEADER */
 
-.chat__header__img {
-    width: 8%;
-    margin-right: 10px;
-}
-
 .chat__header__text {
     font-size: 12px;
 }
@@ -112,8 +107,33 @@ body {
     color: #6B7275;
 }
 
+.chat-card__img {
+    width: 50px;
+    aspect-ratio: 1/1;
+    object-position: center;
+    margin-right: 5px;
+}
+
 /* CHAT VIEW */
 
 .chat__view {
     background-image: url(../img/backgroundChat.jpg);
+}
+
+.chat__view-card {
+    border-radius: 5px;
+    width: 250px;
+    height: 50px;
+}
+
+.chat__view-card-sent {
+    background-color: var(--sent-msg-bg);
+}
+
+.chat__view-card__text {
+    font-size: 12px;
+}
+
+.chat__view-card__time {
+    font-size: 10px;
 }
