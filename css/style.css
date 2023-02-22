@@ -41,17 +41,20 @@ body {
     background-color: var(--user-bg);
 }
 
-.user-toolbar{
+.user-toolbar,
+.chat__header{
     padding: 10px 6px;
     height: 60px;
 }
 
 .user-toolbar__icons,
-.search-bar__icon {
+.search-bar__icon,
+.chat__header__toolbar__icons {
     color: var(--icon-color);
 }
 
-.user-toolbar__icons > * {
+.user-toolbar__icons > *,
+.chat__header__toolbar__icons > * {
     padding: 0 5px;
 }
 
@@ -95,4 +98,15 @@ body {
 
 .chat__view {
     background-image: url(../img/backgroundChat.jpg);
+}
+
+/* CHAT HEADER */
+
+.chat__header__img {
+    width: 8%;
+    margin-right: 10px;
+}
+
+.chat__header__text {
+    font-size: 12px;
 }
