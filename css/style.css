@@ -28,14 +28,6 @@ body {
     overflow: hidden;
 }
 
-.container {
-    padding: 0 !important;
-}
-
-.main-aside {
-    flex-basis: 30%
-}
-
 .user-toolbar,
 .chat__header,
 .chat__toolbar {
@@ -52,4 +44,8 @@ body {
 
 .search-bar {
     background-color: var(--search-bg);
+}
+
+.chat__header {
+    width: 100%;
 }
