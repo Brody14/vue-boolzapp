@@ -4,6 +4,7 @@
     --sent-msg-bg: #D5F9BA;
     --active-chat: #E9EBEB;
     --search-bg: #FAFAFA;
+    --icon-color: #B1B1B1;
 }
 
 * {
@@ -14,7 +15,12 @@
 
 ul,
 ol {
-	list-style: none;
+    list-style: none;
+}
+
+a {
+    color: currentColor;
+    text-decoration: none;
 }
 
 img {
@@ -48,4 +54,24 @@ body {
 
 .chat__header {
     width: 100%;
+}
+
+.user-toolbar{
+    padding: 10px 6px;
+}
+
+.user-toolbar__icons {
+    color: var(--icon-color);
+}
+
+.user-toolbar__icons > * {
+    padding: 0 5px;
+}
+
+.user__img {
+    width: 30%;
+    border-radius: 50%;
+    object-fit: 1/1;
+    object-position: center;
+    margin-right: 5px;
 }
