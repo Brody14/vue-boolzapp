@@ -90,87 +90,17 @@
                     <!-- CHAT WRAPPER -->
 
                     <div class="row chat-wrapper flex-grow-1 overflow-y-auto">
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
+                        <div v-for="contact in contacts" class="chat-card d-flex p-2">
+                            <img class="chat-card__img rounded-circle" :src="contact.avatar" alt="">
                             <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" src="./img/user.jpg" alt="">
-                            <div>
-                                <p class="m-0">nome</p>
+                                <p class="m-0">{{contact.name}}</p>
                                 <p class="m-0 text-secondary">
                                     messaggio
                                 </p>
                             </div>
                         </div>
                     </div>
-
+                    <!-- CHAT -->
                 </div>
 
                 <div class="col-8 chat border h-100 d-flex flex-column">
@@ -226,10 +156,6 @@
                                 <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
                             </div>
                         </div>
-
-                        
-
-
                         
 
                     </div>
