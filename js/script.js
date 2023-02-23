@@ -1,4 +1,4 @@
-console.log("TFK");
+//console.log("TFK");
 
 const contacts = [
 	{
@@ -172,29 +172,42 @@ createApp({
 			contacts: contacts,
 			currentChat: 0,
 			messageSent: "",
+            chat: 0,
 		};
 	},
 	methods: {
 		getCurrentChat(index) {
-			this.currentChat = index;
+            this.currentChat = index;
 		},
 		sendMessage(currentChat) {
+            this.chat = this.currentChat
 			let message = this.messageSent.trim();
 
-			if (message === "") {
-				this.messageSent = "";
-				return;
+            if (message !== '') {
+                const newMessage = {
+                    date: "14:03",
+                    message: message,
+                    status: "sent",
+                };
+    
+                this.contacts[currentChat].messages.push(newMessage);
+    
+                this.messageSent = "";
+                setTimeout(this.answer, 1000)
+
 			}
-			const newMessage = {
-				date: "14:03",
-				message: message,
-				status: "sent",
-			};
 
-			this.contacts[currentChat].messages.push(newMessage);
-
-			this.messageSent = "";
-			console.log(message);
+            this.messageSent = "";
 		},
+         answer() {
+             newAnswer = {
+                 date: "14:25",
+                 message: 'Ok!',
+                 status: "received",
+             }
+
+            
+            this.contacts[this.chat].messages.push(newAnswer)
+         }
 	},
 }).mount("#app");

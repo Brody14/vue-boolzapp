@@ -151,7 +151,7 @@
 						<div class="chat d-flex flex-column gap-2">
 							<div
 								class="chat__view-card p-2"
-								v-for="(messageInfo, i) in contacts[currentChat].messages "
+								v-for="(messageInfo, i) in contacts[currentChat].messages"
 								:class="messageInfo.status === 'sent' ? 'chat__view-card-sent' : 'chat__view-card-received' "
 							>
 								<p class="chat__view-card__text m-0 text-start">

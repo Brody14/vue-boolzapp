@@ -122,6 +122,7 @@ body {
 
 .chat__view {
     background-image: url(../img/backgroundChat.jpg);
+    background-size: contain;
 }
 
 .chat__view-card {
