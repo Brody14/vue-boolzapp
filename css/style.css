@@ -72,7 +72,6 @@ body {
 
 .notifications {
     background-color: var(--notifications-bg);
-    height: 70px;
 }
 
 .bell {
@@ -89,7 +88,6 @@ body {
 /* SEARCH BAR */
 .search-bar {
     background-color: var(--search-bg);
-    height: 50px;
 }
 
 .search-bar__icon {
