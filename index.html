@@ -20,170 +20,177 @@
 	</head>
 
 	<body class="vh-100 d-flex overflow-hidden">
-
 		<div id="app" class="boolzap my-4 container bg-white">
- 
-            <div class="row h-100">
-                <div class="col-4 d-flex flex-column  h-100">
-            
-                    <!-- USER -->
+			<div class="row h-100">
+				<div class="col-4 d-flex flex-column h-100 border-end">
+					<!-- USER -->
 
-                    <div class="row user-toolbar align-items-center">
-                        <div class="col d-flex align-items-center p-0">
-                            <img
-                                class="user__img rounded-circle"
-                                src="./img/user.jpg"
-                                alt=""
-                            />
-                            <span>Brody</span>
-                        </div>
-                        <div class="col-auto p-0">
-                            <ul class="d-flex user-toolbar__icons m-0">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-circle-notch"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-message"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+					<div class="row user-toolbar align-items-center">
+						<div class="col d-flex align-items-center p-0">
+							<img
+								class="user__img rounded-circle"
+								src="./img/user.jpg"
+								alt=""
+							/>
+							<span>Brody</span>
+						</div>
+						<div class="col-auto p-0">
+							<ul class="d-flex user-toolbar__icons m-0">
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-circle-notch"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-message"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-ellipsis-vertical"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-                    <!-- NOTIFICATION -->
+					<!-- NOTIFICATION -->
 
-                    <div class="row notifications align-items-center">
-                        <div class="col-auto bell">
-                            <i
-                                class="rounded-circle bg-white p-2 fa-solid fa-bell-slash"
-                            ></i>
-                        </div>
-                        <div class="col notifications__text p-0">
-                            <p class="m-0">Ricevi notifiche di nuovi messaggi</p>
-                            <a class="m-0 text-decoration-underline text-secondary" href="#">
-                                Attiva notifiche desktop
-                            </a>
-                        </div>
-                    </div>
+					<div class="row notifications align-items-center">
+						<div class="col-auto bell">
+							<i class="rounded-circle bg-white p-2 fa-solid fa-bell-slash"></i>
+						</div>
+						<div class="col notifications__text p-0">
+							<p class="m-0">Ricevi notifiche di nuovi messaggi</p>
+							<a class="m-0 text-decoration-underline text-secondary" href="#">
+								Attiva notifiche desktop
+							</a>
+						</div>
+					</div>
 
-                    <!-- SEARCH BAR -->
+					<!-- SEARCH BAR -->
 
+					<div class="row search-bar py-2 px-1">
+						<div class="input-group p-0 border">
+							<span
+								class="input-group-text search-bar__icon border-0"
+								id="inputGroup-sizing-default"
+							>
+								<i class="mx-auto fa-solid fa-magnifying-glass"></i>
+							</span>
+							<input
+								type="text"
+								class="form-control border-0"
+								placeholder="Cerca o inizia una nuova chat"
+							/>
+						</div>
+					</div>
 
-                    <div class="row search-bar py-2 px-1">
-                        <div class="input-group p-0 border">
-                            <span class="input-group-text search-bar__icon border-0" id="inputGroup-sizing-default">
-                                <i class="mx-auto fa-solid fa-magnifying-glass"></i>
-                            </span>
-                            <input type="text" class="form-control border-0" placeholder="Cerca o inizia una nuova chat">
-                        </div>
-                        
-                    </div>
+					<!-- CHAT WRAPPER -->
 
-                    <!-- CHAT WRAPPER -->
+					<div class="row chat-wrapper flex-grow-1 overflow-y-auto">
+						<div
+							v-for="(contact, i) in contacts"
+							class="chat-card d-flex p-2 border-bottom"
+                            :class="i === currentChat ? 'active' : ''"
+							@click="getCurrentChat(i)"
+						>
+							<img
+								class="chat-card__img rounded-circle"
+								:src="contact.avatar"
+								alt=""
+							/>
+							<div>
+								<p class="m-0">{{contact.name}}</p>
+								<p class="m-0 text-secondary">messaggio</p>
+							</div>
+							<p class="chat-card__time ms-auto text-secondary">12.30</p>
+						</div>
+					</div>
+				</div>
 
-                    <div class="row chat-wrapper flex-grow-1 overflow-y-auto">
-                        <div v-for="contact in contacts" class="chat-card d-flex p-2">
-                            <img class="chat-card__img rounded-circle" :src="contact.avatar" alt="">
-                            <div>
-                                <p class="m-0">{{contact.name}}</p>
-                                <p class="m-0 text-secondary">
-                                    messaggio
-                                </p>
-                            </div>
-                            <p class="chat-card__time ms-auto text-secondary" >12.30</p>
-                        </div>
-                    </div>
-                    <!-- CHAT -->
-                </div>
+				<!-- CHAT -->
+				<div class="col-8 chat border h-100 d-flex flex-column">
+					<div class="row chat__header align-items-center">
+						<div class="col d-flex align-items-center p-0">
+							<img
+								class="chat__header__img rounded-circle"
+								src="./img/user.jpg"
+								alt=""
+							/>
+							<div class="chat__header__text">
+								<p class="m-0">{{contacts[currentChat].name}}</p>
+								<p class="text-secondary m-0">Ultimo accesso</p>
+							</div>
+						</div>
+						<div class="col-auto p-0">
+							<ul class="d-flex chat__header__toolbar__icons m-0">
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-magnifying-glass"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-paperclip"></i>
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-ellipsis-vertical"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-                <div class="col-8 chat border h-100 d-flex flex-column">
-                    <div class="row chat__header align-items-center">
-                        <div class="col d-flex align-items-center p-0">
-                            <img
-                                class="chat__header__img rounded-circle"
-                                src="./img/user.jpg"
-                                alt=""
-                            />
-                            <div class="chat__header__text">
-                                <p class="m-0">Chewawa</p>
-                                <p class="text-secondary m-0">Ultimo accesso</p>
-                            </div>
-                        </div>
-                        <div class="col-auto p-0">
-                            <ul class="d-flex chat__header__toolbar__icons m-0">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-paperclip"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-ellipsis-vertical"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+					<div
+						class="row chat__view flex-grow-1 overflow-y-scroll py-3 px-5 align-items-start"
+					>
+						<div class="chat d-flex flex-column gap-2">
+							<div
+								class="chat__view-card p-2"
+								v-for="(message, i) in contacts[currentChat].messages "
+								:class="message.status === 'sent' ? 'chat__view-card-sent' : 'chat__view-card-received' "
+							>
+								<p class="chat__view-card__text m-0 text-start">
+									{{message.message}}
+								</p>
+								<p class="chat__view-card__time m-0 text-end text-secondary">
+									{{message.date}}
+								</p>
+							</div>
+						</div>
+					</div>
 
-
-                    <div class="row chat__view flex-grow-1 overflow-y-scroll py-3 px-5 align-items-start">
-                    
-                        <div class="chat">
-                            <div class="chat__view-card chat__view-card-sent  mb-2 ms-auto p-2">
-                                <p class="chat__view-card__text m-0 text-start">Cose a caso</p>
-                                <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
-                            </div>
-
-                            <div class="chat__view-card chat__view-card-sent  mb-2 ms-auto p-2">
-                                <p class="chat__view-card__text m-0 text-start">Cose a caso</p>
-                                <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
-                            </div>
-
-                            <div class="chat__view-card chat__view-card-received bg-white  mb-2 me-auto p-2">
-                                <p class="chat__view-card__text m-0 text-start">Cose a caso</p>
-                                <p class="chat__view-card__time m-0 text-end text-secondary">12.30</p>
-                            </div>
-                        </div>
-                        
-
-                    </div>
-
-                    <div class="row chat__toolbar ">
-                        <div class="p-0">
-                            <ul class="d-flex chat__toolbar__icons m-0 p-0 align-items-center">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-regular fa-face-smile"></i>
-                                    </a>
-                                </li>
-                                <li class="flex-grow-1">
-                                    <input type="text" class="form-control border-0" placeholder="Scrivi un messaggio">
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa-solid fa-microphone"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        
-		
+					<div class="row chat__toolbar">
+						<div class="p-0">
+							<ul
+								class="d-flex chat__toolbar__icons m-0 p-0 align-items-center"
+							>
+								<li>
+									<a href="#">
+										<i class="fa-regular fa-face-smile"></i>
+									</a>
+								</li>
+								<li class="flex-grow-1">
+									<input
+										type="text"
+										class="form-control border-0"
+										placeholder="Scrivi un messaggio"
+									/>
+								</li>
+								<li>
+									<a href="#">
+										<i class="fa-solid fa-microphone"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<script src="./js/script.js"></script>

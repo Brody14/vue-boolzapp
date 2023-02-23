@@ -1,5 +1,6 @@
 console.log("TFK");
 
+
 const contacts = [
 	{
 		name: "Michele",
@@ -170,6 +171,12 @@ createApp({
 	data() {
 		return {
 			contacts: contacts,
+            currentChat: 0,
 		};
 	},
+    methods: {
+        getCurrentChat(index){
+            this.currentChat = index
+        }
+    },
 }).mount("#app");

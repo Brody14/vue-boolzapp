@@ -112,6 +112,12 @@ body {
     margin-right: 5px;
 }
 
+.chat-card:hover,
+.active {
+    background-color: var(--active-chat);
+}
+
+
 /* CHAT VIEW */
 
 .chat__view {
@@ -120,12 +126,18 @@ body {
 
 .chat__view-card {
     border-radius: 5px;
-    width: 250px;
-    height: 50px;
+    max-width: 70%;
+    min-width: 15%;
 }
 
 .chat__view-card-sent {
     background-color: var(--sent-msg-bg);
+    align-self: flex-end;
+}
+
+.chat__view-card-received {
+    background-color: white;
+    align-self: flex-start;
 }
 
 .chat__view-card__text {
@@ -134,4 +146,5 @@ body {
 
 .chat__view-card__time {
     font-size: 10px;
+    padding-top: 5px;
 }
