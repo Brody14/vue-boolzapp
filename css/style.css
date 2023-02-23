@@ -45,7 +45,6 @@ body {
 .chat__header,
 .chat__toolbar{
     padding: 10px 6px;
-    height: 60px;
 }
 
 .user-toolbar__icons,
@@ -97,7 +96,8 @@ body {
 
 /* CHAT HEADER */
 
-.chat__header__text {
+.chat__header__text,
+.chat-card__time {
     font-size: 12px;
 }
 
