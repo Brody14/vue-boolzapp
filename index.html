@@ -151,14 +151,14 @@
 						<div class="chat d-flex flex-column gap-2">
 							<div
 								class="chat__view-card p-2"
-								v-for="(message, i) in contacts[currentChat].messages "
-								:class="message.status === 'sent' ? 'chat__view-card-sent' : 'chat__view-card-received' "
+								v-for="(messageInfo, i) in contacts[currentChat].messages "
+								:class="messageInfo.status === 'sent' ? 'chat__view-card-sent' : 'chat__view-card-received' "
 							>
 								<p class="chat__view-card__text m-0 text-start">
-									{{message.message}}
+									{{messageInfo.message}}
 								</p>
 								<p class="chat__view-card__time m-0 text-end text-secondary">
-									{{message.date}}
+									{{messageInfo.date}}
 								</p>
 							</div>
 						</div>
@@ -178,7 +178,9 @@
 									<input
 										type="text"
 										class="form-control border-0"
-										placeholder="Scrivi un messaggio"
+                                        v-model="messageSent"
+										placeholder="Scrivi un messaggio" 
+                                        @keyup.enter="sendMessage(currentChat)"
 									/>
 								</li>
 								<li>

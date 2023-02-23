@@ -1,6 +1,5 @@
 console.log("TFK");
 
-
 const contacts = [
 	{
 		name: "Michele",
@@ -171,12 +170,31 @@ createApp({
 	data() {
 		return {
 			contacts: contacts,
-            currentChat: 0,
+			currentChat: 0,
+			messageSent: "",
 		};
 	},
-    methods: {
-        getCurrentChat(index){
-            this.currentChat = index
-        }
-    },
+	methods: {
+		getCurrentChat(index) {
+			this.currentChat = index;
+		},
+		sendMessage(currentChat) {
+			let message = this.messageSent.trim();
+
+			if (message === "") {
+				this.messageSent = "";
+				return;
+			}
+			const newMessage = {
+				date: "14:03",
+				message: message,
+				status: "sent",
+			};
+
+			this.contacts[currentChat].messages.push(newMessage);
+
+			this.messageSent = "";
+			console.log(message);
+		},
+	},
 }).mount("#app");
