@@ -180,6 +180,11 @@ createApp({
 			now: DateTime.now()
 		};
 	},
+	watch: {
+		now(newTime, oldTime) {
+			console.log(now)
+		}
+	},
 	methods: {
 		setCurrentChat(index) {
 			this.currentChat = index;
@@ -188,12 +193,14 @@ createApp({
 			this.chat = this.currentChat;
 			let message = this.messageSent.trim();
 
+
 			if (message !== "") {
 				const newMessage = {
-					date: this.now.toFormat('HH:mm'),
+					date: this.now.toFormat('dd/LL/yyyy HH:mm:ss'),
 					message: message,
 					status: "sent",
 				};
+				//console.log(newMessage)
 
 				this.contacts[currentChat].messages.push(newMessage);
 
@@ -204,13 +211,19 @@ createApp({
 			this.messageSent = "";
 		},
 		answer() {
-			newAnswer = {
-				date: this.now.toFormat('HH:mm'),
+			const newAnswer = {
+				date: this.now.toFormat('dd/LL/yyyy HH:mm:ss'),
 				message: "Ok!",
 				status: "received",
 			};
 
 			this.contacts[this.chat].messages.push(newAnswer);
+		},
+		parseDate(date) {
+			
+			const dateToParse = DateTime.fromFormat(date, 'dd/LL/yyyy HH:mm:ss')
+
+			return dateToParse.toFormat('HH:mm')
 		},
 	},
 }).mount("#app");
