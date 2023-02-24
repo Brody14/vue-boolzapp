@@ -166,48 +166,51 @@ const contacts = [
 
 const { createApp } = Vue;
 
+const { DateTime } = luxon;
+
+
 createApp({
 	data() {
 		return {
 			contacts: contacts,
 			currentChat: 0,
 			messageSent: "",
-            chat: 0,
+			chat: 0,
+			search: "",
+			now: DateTime.now()
 		};
 	},
 	methods: {
-		getCurrentChat(index) {
-            this.currentChat = index;
+		setCurrentChat(index) {
+			this.currentChat = index;
 		},
 		sendMessage(currentChat) {
-            this.chat = this.currentChat
+			this.chat = this.currentChat;
 			let message = this.messageSent.trim();
 
-            if (message !== '') {
-                const newMessage = {
-                    date: "14:03",
-                    message: message,
-                    status: "sent",
-                };
-    
-                this.contacts[currentChat].messages.push(newMessage);
-    
-                this.messageSent = "";
-                setTimeout(this.answer, 1000)
+			if (message !== "") {
+				const newMessage = {
+					date: this.now.toFormat('HH:mm'),
+					message: message,
+					status: "sent",
+				};
 
+				this.contacts[currentChat].messages.push(newMessage);
+
+				this.messageSent = "";
+				setTimeout(this.answer, 1000);
 			}
 
-            this.messageSent = "";
+			this.messageSent = "";
 		},
-         answer() {
-             newAnswer = {
-                 date: "14:25",
-                 message: 'Ok!',
-                 status: "received",
-             }
+		answer() {
+			newAnswer = {
+				date: this.now.toFormat('HH:mm'),
+				message: "Ok!",
+				status: "received",
+			};
 
-            
-            this.contacts[this.chat].messages.push(newAnswer)
-         }
+			this.contacts[this.chat].messages.push(newAnswer);
+		},
 	},
 }).mount("#app");

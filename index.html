@@ -12,6 +12,7 @@
 			integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
 			crossorigin="anonymous"
 		/>
+		<script src="https://cdn.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
 		<script
 			src="https://kit.fontawesome.com/d3a966ac98.js"
 			crossorigin="anonymous"
@@ -83,6 +84,7 @@
 								type="text"
 								class="form-control border-0"
 								placeholder="Cerca o inizia una nuova chat"
+								v-model="search"
 							/>
 						</div>
 					</div>
@@ -93,8 +95,8 @@
 						<div
 							v-for="(contact, i) in contacts"
 							class="chat-card d-flex p-2 border-bottom"
-                            :class="i === currentChat ? 'active' : ''"
-							@click="getCurrentChat(i)"
+							:class="i === currentChat ? 'active' : ''"
+							@click="setCurrentChat(i)"
 						>
 							<img
 								class="chat-card__img rounded-circle"
@@ -116,7 +118,7 @@
 						<div class="col d-flex align-items-center p-0">
 							<img
 								class="chat__header__img rounded-circle"
-								src="./img/user.jpg"
+								:src="contacts[currentChat].avatar"
 								alt=""
 							/>
 							<div class="chat__header__text">
@@ -178,9 +180,9 @@
 									<input
 										type="text"
 										class="form-control border-0"
-                                        v-model="messageSent"
-										placeholder="Scrivi un messaggio" 
-                                        @keyup.enter="sendMessage(currentChat)"
+										v-model="messageSent"
+										placeholder="Scrivi un messaggio"
+										@keyup.enter="sendMessage(currentChat)"
 									/>
 								</li>
 								<li>
