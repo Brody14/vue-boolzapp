@@ -180,11 +180,6 @@ createApp({
 			now: DateTime.now()
 		};
 	},
-	watch: {
-		now(newTime, oldTime) {
-			console.log(now)
-		}
-	},
 	methods: {
 		setCurrentChat(index) {
 			this.currentChat = index;
@@ -200,7 +195,7 @@ createApp({
 					message: message,
 					status: "sent",
 				};
-				//console.log(newMessage)
+				console.log(newMessage)
 
 				this.contacts[currentChat].messages.push(newMessage);
 
@@ -225,5 +220,10 @@ createApp({
 
 			return dateToParse.toFormat('HH:mm')
 		},
+	},
+	mounted() {
+		setInterval(function() {
+		  this.now = DateTime.now()
+		}, 1000)
 	},
 }).mount("#app");
