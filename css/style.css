@@ -101,14 +101,17 @@ body {
     font-size: 12px;
 }
 
+.chat-card {
+    height: 75px;
+}
+
 .chat__toolbar__icon {
     color: #6B7275;
 }
 
 .chat-card__img {
-    width: 50px;
+    height: 60px;
     aspect-ratio: 1/1;
-    object-position: center;
     margin-right: 5px;
 }
 

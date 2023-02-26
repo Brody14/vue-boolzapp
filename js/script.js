@@ -168,7 +168,6 @@ const { createApp } = Vue;
 
 const { DateTime } = luxon;
 
-
 createApp({
 	data() {
 		return {
@@ -177,27 +176,37 @@ createApp({
 			messageSent: "",
 			chat: 0,
 			search: "",
-			now: DateTime.now()
+			now: DateTime.now(),
 		};
+	},
+	computed: {
+		contactList() {
+			const searchValue = this.search.trim().toLowerCase();
+
+			return this.contacts.filter((contact) =>
+				contact.name.toLowerCase().includes(searchValue)
+			);
+
+		},
 	},
 	methods: {
 		setCurrentChat(index) {
 			this.currentChat = index;
+			console.log(index);
 		},
 		sendMessage(currentChat) {
 			this.chat = this.currentChat;
 			let message = this.messageSent.trim();
 
-
 			if (message !== "") {
 				const newMessage = {
-					date: this.now.toFormat('dd/LL/yyyy HH:mm:ss'),
+					date: this.now.toFormat("dd/LL/yyyy HH:mm:ss"),
 					message: message,
 					status: "sent",
 				};
-				console.log(newMessage)
+				//console.log(newMessage)
 
-				this.contacts[currentChat].messages.push(newMessage);
+				this.contactList[currentChat].messages.push(newMessage);
 
 				this.messageSent = "";
 				setTimeout(this.answer, 1000);
@@ -207,23 +216,22 @@ createApp({
 		},
 		answer() {
 			const newAnswer = {
-				date: this.now.toFormat('dd/LL/yyyy HH:mm:ss'),
+				date: this.now.toFormat("dd/LL/yyyy HH:mm:ss"),
 				message: "Ok!",
 				status: "received",
 			};
 
-			this.contacts[this.chat].messages.push(newAnswer);
+			this.contactList[this.chat].messages.push(newAnswer);
 		},
 		parseDate(date) {
-			
-			const dateToParse = DateTime.fromFormat(date, 'dd/LL/yyyy HH:mm:ss')
+			const dateToParse = DateTime.fromFormat(date, "dd/LL/yyyy HH:mm:ss");
 
-			return dateToParse.toFormat('HH:mm')
+			return dateToParse.toFormat("HH:mm");
 		},
 	},
 	mounted() {
-		setInterval(function() {
-		  this.now = DateTime.now()
-		}, 1000)
+		setInterval(() => {
+			this.now = DateTime.now();
+		}, 1000);
 	},
 }).mount("#app");
