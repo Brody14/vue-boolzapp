@@ -57,7 +57,8 @@ const contacts = [
 			},
 			{
 				date: "28/03/2020 10:20:10",
-				message: "Se..e dovrei dare soldi all'Olimpia per vedere che ti danno una teca con la tua maglia?",
+				message:
+					"Se..e dovrei dare soldi all'Olimpia per vedere che ti danno una teca con la tua maglia?",
 				status: "sent",
 			},
 			{
@@ -181,37 +182,47 @@ createApp({
 			messageSent: "",
 			chat: 0,
 			search: "",
-			ok: false,
+			timestamp: 0,
 		};
 	},
 	watch: {
 		currentChat: function (newChat, oldChat) {
-			this.resetMessage()
-		}
+			this.resetMessage();
+		},
 	},
 	methods: {
 		setCurrentChat(index) {
 			this.currentChat = index;
 			console.log(index);
 		},
-		isHidden(contact){
-			const name = contact.name.toLowerCase()
+		isHidden(contact) {
+			const name = contact.name.toLowerCase();
 			//const {name} = contact
-	 		const searchValue = this.search.trim().toLowerCase();
+			const searchValue = this.search.trim().toLowerCase();
 
-			const result = !name.includes(searchValue)
-			return result
-
+			const result = !name.includes(searchValue);
+			return result;
 		},
 		getDate(format = "dd/LL/yyyy HH:mm:ss") {
-			const now= DateTime.now()
+			const now = DateTime.now();
+
+			return now.toFormat(format);
+		},
+		randomTime() {
+			const maxDate = Date.now();
+			const dateRandom = Math.floor(Math.random() * maxDate);
+			hours = new Date(dateRandom).getHours()
+			hours = hours > 9 ? hours : '0' + hours;
+			minutes = new Date(dateRandom).getMinutes()
+			minutes = minutes > 9 ? minutes : '0' + minutes;
+			return hours + ':' + minutes
 			
-			return now.toFormat(format)
+			
 		},
 		sendMessage(currentChat) {
 			this.chat = this.currentChat;
 			let message = this.messageSent.trim();
-			const date = this.getDate()
+			const date = this.getDate();
 
 			if (message !== "") {
 				const newMessage = {
@@ -223,14 +234,14 @@ createApp({
 
 				this.contactList[currentChat].messages.push(newMessage);
 
-				this.resetMessage()
+				this.resetMessage();
 				setTimeout(this.answer, 1000);
 			}
 
-			this.resetMessage()
+			this.resetMessage();
 		},
 		answer() {
-			const date = this.getDate()
+			const date = this.getDate();
 
 			const newAnswer = {
 				date: date,
