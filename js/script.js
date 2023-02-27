@@ -2,162 +2,167 @@
 
 const contacts = [
 	{
-		name: "Michele",
-		avatar: "./img/user.jpg",
+		name: "MaddaLENZA",
+		avatar: "./img/02.png",
 		visible: true,
 		messages: [
 			{
 				date: "10/01/2020 15:30:55",
-				message: "Hai portato a spasso il cane?",
-				status: "sent",
+				message: "Ho fame...",
+				status: "received",
 			},
 			{
 				date: "10/01/2020 15:50:00",
-				message: "Ricordati di stendere i panni",
+				message: "E' presto!!",
 				status: "sent",
 			},
 			{
 				date: "10/01/2020 16:15:22",
-				message: "Tutto fatto!",
+				message: "Inutile umana...",
 				status: "received",
 			},
 		],
 	},
 	{
-		name: "Fabio",
-		avatar: "./img/user.jpg",
+		name: "Wawa",
+		avatar: "./img/03.png",
 		visible: true,
 		messages: [
 			{
 				date: "20/03/2020 16:30:00",
-				message: "Ciao come stai?",
+				message: "Cos'era quel rumore?!?!",
 				status: "sent",
 			},
 			{
 				date: "20/03/2020 16:30:55",
-				message: "Bene grazie! Stasera ci vediamo?",
+				message: "Ho fatto un casino...",
 				status: "received",
 			},
 			{
 				date: "20/03/2020 16:35:00",
-				message: "Mi piacerebbe ma devo andare a fare la spesa.",
+				message: "Ma pensa...!",
 				status: "sent",
 			},
 		],
 	},
 	{
-		name: "Samuele",
-		avatar: "./img/user.jpg",
+		name: "Vlado",
+		avatar: "./img/04.png",
 		visible: true,
 		messages: [
 			{
 				date: "28/03/2020 10:10:40",
-				message: "La Marianna va in campagna",
+				message: "Il 3 c'è la Micov Night al Forum...",
 				status: "received",
 			},
 			{
 				date: "28/03/2020 10:20:10",
-				message: "Sicuro di non aver sbagliato chat?",
+				message: "Se..e dovrei dare soldi all'Olimpia per vedere che ti danno una teca con la tua maglia?",
 				status: "sent",
 			},
 			{
 				date: "28/03/2020 16:15:22",
-				message: "Ah scusa!",
+				message: "Dai...!",
 				status: "received",
 			},
 		],
 	},
 	{
-		name: "Alessandro B.",
-		avatar: "./img/user.jpg",
+		name: "Fame on Fire",
+		avatar: "./img/05.png",
 		visible: true,
 		messages: [
 			{
 				date: "10/01/2020 15:30:55",
-				message: "Lo sai che ha aperto una nuova pizzeria?",
+				message: "Non riesco a smettere di ascolta l'album nuovo...è normale?!",
 				status: "sent",
 			},
 			{
 				date: "10/01/2020 15:50:00",
-				message: "Si, ma preferirei andare al cinema",
+				message: "Si!!",
 				status: "received",
 			},
 		],
 	},
 	{
-		name: "Alessandro L.",
-		avatar: "./img/user.jpg",
+		name: "Mokino",
+		avatar: "./img/06.png",
 		visible: true,
 		messages: [
 			{
 				date: "10/01/2020 15:30:55",
-				message: "Ricordati di chiamare la nonna",
+				message: "Io wawa non lo tollero più...",
 				status: "sent",
 			},
 			{
 				date: "10/01/2020 15:50:00",
-				message: "Va bene, stasera la sento",
+				message: "Lo so, stasera lo elimino!",
 				status: "received",
 			},
 		],
 	},
 	{
-		name: "Claudia",
-		avatar: "./img/user.jpg",
+		name: "Gianca",
+		avatar: "./img/07.png",
 		visible: true,
 		messages: [
 			{
 				date: "10/01/2020 15:30:55",
-				message: "Ciao Claudia, hai novità?",
+				message: "WOW",
 				status: "sent",
 			},
 			{
 				date: "10/01/2020 15:50:00",
-				message: "Non ancora",
+				message: "Lo so, abbiamo fatto schifo...",
 				status: "received",
 			},
 			{
 				date: "10/01/2020 15:51:00",
-				message: "Nessuna nuova, buona nuova",
+				message: "Nu, tu sei stato stupendo!!!",
 				status: "sent",
 			},
 		],
 	},
 	{
-		name: "Federico",
-		avatar: "./img/user.jpg",
+		name: "Pozz",
+		avatar: "./img/08.png",
 		visible: true,
 		messages: [
 			{
 				date: "10/01/2020 15:30:55",
-				message: "Fai gli auguri a Martina che è il suo compleanno!",
+				message: "Era ora convocassi Casarin!",
 				status: "sent",
 			},
 			{
 				date: "10/01/2020 15:50:00",
-				message: "Grazie per avermelo ricordato, le scrivo subito!",
+				message: "Eh lo so...",
 				status: "received",
 			},
 		],
 	},
 	{
-		name: "Davide",
-		avatar: "./img/user.jpg",
+		name: "Papa Roach",
+		avatar: "./img/09.png",
 		visible: true,
 		messages: [
 			{
+				date: "10/01/2020 15:30:50",
+				message: "Ragazzi...",
+				status: "sent",
+			},
+			{
 				date: "10/01/2020 15:30:55",
-				message: "Ciao, andiamo a mangiare la pizza stasera?",
+				message: "Dicci tutto!",
 				status: "received",
 			},
 			{
 				date: "10/01/2020 15:50:00",
-				message: "No, l'ho già mangiata ieri, ordiniamo sushi!",
+				message: "Serve materiale nuovo...!",
 				status: "sent",
 			},
 			{
 				date: "10/01/2020 15:51:00",
-				message: "OK!!",
+				message: "Siamo già in studio!",
 				status: "received",
 			},
 		],

@@ -62,8 +62,6 @@ body {
 .user__img,
 .chat__header__img {
     width: 40px;
-    aspect-ratio: 1/1;
-    object-position: center;
     margin-right: 5px;
 }
 
@@ -111,7 +109,6 @@ body {
 
 .chat-card__img {
     height: 60px;
-    aspect-ratio: 1/1;
     margin-right: 5px;
 }
 

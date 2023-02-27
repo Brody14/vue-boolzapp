@@ -29,8 +29,8 @@
 					<div class="row user-toolbar align-items-center">
 						<div class="col d-flex align-items-center p-0">
 							<img
-								class="user__img rounded-circle"
-								src="./img/user.jpg"
+								class="user__img"
+								src="./img/01.png"
 								alt=""
 							/>
 							<span>Brody</span>
@@ -93,13 +93,13 @@
 
 					<div class="row chat-wrapper overflow-y-auto">
 						<div
-							v-for="(contact, i) in contacts" :key="contact.name"
+							v-for="(contact, i) in contacts"
 							class="chat-card d-flex p-2 border-bottom"
 							:class="{'active': currentChat === i , 'd-none': isHidden(contact)}"
 							@click="setCurrentChat(i)"
 						>
 							<img
-								class="chat-card__img rounded-circle"
+								class="chat-card__img"
 								:src=contact.avatar
 								alt=""
 							/>
@@ -117,7 +117,7 @@
 					<div class="row chat__header align-items-center">
 						<div class="col d-flex align-items-center p-0">
 							<img
-								class="chat__header__img rounded-circle"
+								class="chat__header__img"
 								:src="contacts[currentChat].avatar"
 								alt=""
 							/>
