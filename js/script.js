@@ -210,9 +210,9 @@ createApp({
 		randomTime() {
 			const maxDate = Date.now();
 			const dateRandom = Math.floor(Math.random() * maxDate);
-			const hours = new Date(dateRandom).getHours()
+			let hours = new Date(dateRandom).getHours()
 			hours = hours > 9 ? hours : '0' + hours;
-			const minutes = new Date(dateRandom).getMinutes()
+			let minutes = new Date(dateRandom).getMinutes()
 			minutes = minutes > 9 ? minutes : '0' + minutes;
 			return hours + ':' + minutes	
 		},
