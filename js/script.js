@@ -176,31 +176,41 @@ createApp({
 			messageSent: "",
 			chat: 0,
 			search: "",
-			now: DateTime.now(),
+			ok: false,
 		};
 	},
-	computed: {
-		contactList() {
-			const searchValue = this.search.trim().toLowerCase();
-
-			return this.contacts.filter((contact) =>
-				contact.name.toLowerCase().includes(searchValue)
-			);
-
-		},
+	watch: {
+		currentChat: function (newChat, oldChat) {
+			this.resetMessage()
+		}
 	},
 	methods: {
 		setCurrentChat(index) {
 			this.currentChat = index;
 			console.log(index);
 		},
+		isHidden(contact){
+			const name = contact.name.toLowerCase()
+			//const {name} = contact
+	 		const searchValue = this.search.trim().toLowerCase();
+
+			const result = !name.includes(searchValue)
+			return result
+
+		},
+		getDate(format = "dd/LL/yyyy HH:mm:ss") {
+			const now= DateTime.now()
+			
+			return now.toFormat(format)
+		},
 		sendMessage(currentChat) {
 			this.chat = this.currentChat;
 			let message = this.messageSent.trim();
+			const date = this.getDate()
 
 			if (message !== "") {
 				const newMessage = {
-					date: this.now.toFormat("dd/LL/yyyy HH:mm:ss"),
+					date: date,
 					message: message,
 					status: "sent",
 				};
@@ -208,20 +218,25 @@ createApp({
 
 				this.contactList[currentChat].messages.push(newMessage);
 
-				this.messageSent = "";
+				this.resetMessage()
 				setTimeout(this.answer, 1000);
 			}
 
-			this.messageSent = "";
+			this.resetMessage()
 		},
 		answer() {
+			const date = this.getDate()
+
 			const newAnswer = {
-				date: this.now.toFormat("dd/LL/yyyy HH:mm:ss"),
+				date: date,
 				message: "Ok!",
 				status: "received",
 			};
 
 			this.contactList[this.chat].messages.push(newAnswer);
+		},
+		resetMessage() {
+			this.messageSent = "";
 		},
 		parseDate(date) {
 			const dateToParse = DateTime.fromFormat(date, "dd/LL/yyyy HH:mm:ss");

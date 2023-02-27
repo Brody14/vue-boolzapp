@@ -93,9 +93,9 @@
 
 					<div class="row chat-wrapper overflow-y-auto">
 						<div
-							v-for="(contact, i) in contactList" :key="contact.name"
+							v-for="(contact, i) in contacts" :key="contact.name"
 							class="chat-card d-flex p-2 border-bottom"
-							:class="currentChat === i ? 'active' : ''"
+							:class="{'active': currentChat === i , 'd-none': isHidden(contact)}"
 							@click="setCurrentChat(i)"
 						>
 							<img
@@ -151,12 +151,13 @@
 						class="row chat__view flex-grow-1 overflow-y-scroll py-3 px-5 align-items-start"
 					>
 						<div class="chat d-flex flex-column gap-2">
+							
 							<div
 								class="chat__view-card p-2"
 								v-for="(messageInfo, index) in contacts[currentChat].messages"
 								:class="messageInfo.status === 'sent' ? 'chat__view-card-sent' : 'chat__view-card-received' "
 							>
-								<p class="chat__view-card__text m-0 text-start">
+								<p class="chat__view-card__text m-0 text-start pe-4">
 									{{messageInfo.message}}
 								</p>
 								<p class="chat__view-card__time m-0 text-end text-secondary">
