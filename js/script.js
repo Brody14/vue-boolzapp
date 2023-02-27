@@ -182,7 +182,6 @@ createApp({
 			messageSent: "",
 			chat: 0,
 			search: "",
-			timestamp: 0,
 		};
 	},
 	watch: {
@@ -211,13 +210,11 @@ createApp({
 		randomTime() {
 			const maxDate = Date.now();
 			const dateRandom = Math.floor(Math.random() * maxDate);
-			hours = new Date(dateRandom).getHours()
+			const hours = new Date(dateRandom).getHours()
 			hours = hours > 9 ? hours : '0' + hours;
-			minutes = new Date(dateRandom).getMinutes()
+			const minutes = new Date(dateRandom).getMinutes()
 			minutes = minutes > 9 ? minutes : '0' + minutes;
-			return hours + ':' + minutes
-			
-			
+			return hours + ':' + minutes	
 		},
 		sendMessage(currentChat) {
 			this.chat = this.currentChat;
