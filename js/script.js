@@ -189,10 +189,15 @@ createApp({
 			this.resetMessage();
 		},
 	},
+	computed: {
+		lastIndex(){
+			this.contacts[currentChat].messages.length-1
+		},
+	},
 	methods: {
 		setCurrentChat(index) {
 			this.currentChat = index;
-			console.log(index);
+			//console.log(index);
 		},
 		isHidden(contact) {
 			const name = contact.name.toLowerCase();
@@ -229,7 +234,7 @@ createApp({
 				};
 				//console.log(newMessage)
 
-				this.contactList[currentChat].messages.push(newMessage);
+				this.contacts[currentChat].messages.push(newMessage);
 
 				this.resetMessage();
 				setTimeout(this.answer, 1000);
@@ -246,7 +251,7 @@ createApp({
 				status: "received",
 			};
 
-			this.contactList[this.chat].messages.push(newAnswer);
+			this.contacts[this.chat].messages.push(newAnswer);
 		},
 		resetMessage() {
 			this.messageSent = "";
@@ -256,10 +261,20 @@ createApp({
 
 			return dateToParse.toFormat("HH:mm");
 		},
+		lastIndexMes(i){
+			return this.contacts[i].messages.slice(-1)[0].message.slice(0,30)
+		},
+		lastMesTime(i){
+			let time = this.contacts[i].messages.slice(-1)[0].date
+			return this.parseDate(time)
+		}
+	
 	},
 	mounted() {
 		setInterval(() => {
 			this.now = DateTime.now();
 		}, 1000);
+		console.log(this.contacts[this.currentChat].messages.slice(-1)[0].date)
+		
 	},
 }).mount("#app");

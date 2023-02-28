@@ -129,6 +129,7 @@ body {
     border-radius: 5px;
     max-width: 70%;
     min-width: 15%;
+    word-break: break-all;
 }
 
 .chat__view-card-sent {
